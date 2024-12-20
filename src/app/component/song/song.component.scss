@@ -1,0 +1,74 @@
+.songs {
+  $width: calc(33rem + 20rem + 16rem + 6rem + 7rem);
+
+  display: grid;
+  grid-template-columns: $width;
+  margin: 4rem auto 0;
+  width: $width;
+
+  & .add-album {
+    margin-top: 2rem;
+    padding: .5rem 1rem;
+    background: none;
+    border: solid 1px #585858;
+    border-radius: .5rem;
+    user-select: none;
+    cursor: pointer;
+    transition: .15s;
+    width: 15rem;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    &:hover {
+      transform: scale(1.08);
+      background: #272727;
+    }
+  }
+
+  & .song {
+    display: grid;
+    grid-template-areas:
+    "title albumTitle artistsName duration actions";
+    grid-template-columns: 33rem 20rem 16rem 6rem 7rem;
+    width: 100%;
+    max-width: 85rem;
+
+    & .line {
+      border: solid 1px #4d4d4d;
+      padding: .5rem 1rem;
+    }
+
+    & .title {
+      grid-area: title;
+      width: 100%;
+    }
+
+    & .duration {
+      grid-area: duration;
+      width: 100%;
+    }
+
+    & .albumTitle {
+      grid-area: albumTitle;
+      width: 100%;
+    }
+
+    & .artistsName {
+      grid-area: artistsName;
+      width: 100%;
+    }
+
+    & .actions {
+      grid-area: actions;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+
+      & .image-delete,
+      & .image-update {
+        cursor: pointer;
+        max-width: 1.5rem;
+      }
+    }
+  }
+}

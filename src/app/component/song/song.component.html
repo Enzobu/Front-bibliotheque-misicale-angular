@@ -1,0 +1,18 @@
+<div class="songs">
+  <a class="add-album" routerLink="/add-song" [class.inactive]="isActive">Ajouer un song</a>
+  <div class="song" *ngFor="let song of songs">
+    <div class="line title">{{song.title}}</div>
+    <div class="line albumTitle">{{song.album.title}}</div>
+    <div class="line artistsName" *ngFor="let artist of song.artists">
+      <div class="artist name">{{artist.name}}</div>
+    </div>
+    <div class="line duration">{{song.duration | duration}}</div>
+    <div class="line actions">
+      <img src="crud/effacer_rouge.svg" alt="image del" class="image-delete" (click)="deleteSong(song.id)"/>
+      <a class="update-song-link" [routerLink]="['/update-song', song.id]">
+        <img src="crud/editer.svg" alt="image update" class="image-update"/>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="lds-hourglass" [class.inactive]="!isActive"></div>
