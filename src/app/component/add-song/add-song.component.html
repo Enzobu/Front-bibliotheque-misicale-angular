@@ -1,0 +1,32 @@
+<div class="form-container" [class.inactive]="isActive">
+  <form [formGroup]="addSongForm">
+    <div class="input-container">
+      <label for="title">Titre : </label>
+      <input id="title" type="text" formControlName="title" placeholder="Entez un title" />
+    </div>
+
+    <div class="input-container">
+      <label for="duration">Durée (en s) : </label>
+      <input id="duration" type="number" formControlName="duration" placeholder="Entrez une durée" />
+    </div>
+
+    <div class="input-container">
+      <label for="artistSelectOption">Choisissez un artiste :</label>
+      <select id="artistSelectOption" formControlName="artistsSelect" class="form-control" (change)="albumFilter()">
+        <option value="-1" selected>-- Sélectionnez --</option>
+        <option *ngFor="let artist of artists" [value]="artist.id">{{ artist.name }}</option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <label for="albumSelectOption">Choisissez un album :</label>
+      <select id="albumSelectOption" formControlName="albumsSelect" class="form-control">
+        <option value="-1" selected>-- Sélectionnez --</option>
+        <option *ngFor="let album of albumsFiltered" [value]="album.id">{{ album.title }}</option>
+      </select>
+    </div>
+
+    <button type="submit" (click)="onSubmit()">Ajouter</button>
+  </form>
+</div>
+<div class="lds-hourglass" [class.inactive]="!isActive"></div>
