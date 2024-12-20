@@ -1,0 +1,32 @@
+.styles {
+  $width: calc(17rem + 65rem);
+
+  display: grid;
+  grid-template-columns: $width;
+  margin: 4rem auto 0;
+  width: $width;
+
+  & .style {
+    display: grid;
+    grid-template-areas:
+    "name artistName";
+    grid-template-columns: 17rem 65rem;
+    width: 100%;
+    max-width: 85rem;
+
+    & .line {
+      border: solid 1px #4d4d4d;
+      padding: .5rem 1rem;
+    }
+
+    & .name {
+      grid-area: name;
+      width: 100%;
+    }
+
+    & .artistName {
+      grid-area: artistName;
+      width: 100%;
+    }
+  }
+}

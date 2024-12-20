@@ -1,0 +1,9 @@
+<div class="styles">
+  <div class="style" *ngFor="let style of styles">
+    <div class="line name">{{style.name}}</div>
+    <ul class="line artistName">
+      <li class="artist" *ngFor="let artist of style.artists">{{artist.name}}</li>
+    </ul>
+  </div>
+</div>
+<div class="lds-hourglass" [class.inactive]="!isActive"></div>
