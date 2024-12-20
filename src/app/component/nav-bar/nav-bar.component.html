@@ -1,0 +1,14 @@
+<nav class="nav" *ngIf="isLogin()">
+  <ul class="nav-list">
+    <li class="nav-items"><a routerLinkActive="active" routerLink="/home">Home</a></li>
+    <li class="nav-items"><a routerLinkActive="active" routerLink="/artists">Artists</a></li>
+    <li class="nav-items"><a routerLinkActive="active" routerLink="/albums">Albums</a></li>
+    <li class="nav-items"><a routerLinkActive="active" routerLink="/styles">Styles</a></li>
+    <li class="nav-items"><a routerLinkActive="active" routerLink="/songs">Songs</a></li>
+    <li class="nav-items"><a routerLink="/account">Account</a></li>
+  </ul>
+</nav>
+
+<div class="">
+  <router-outlet />
+</div>
