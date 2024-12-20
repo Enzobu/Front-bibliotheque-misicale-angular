@@ -1,0 +1,42 @@
+.albums {
+  $width: calc(18rem + 20rem + 32rem + 12rem);
+
+  display: grid;
+  grid-template-columns: $width;
+  margin: 4rem auto 0;
+  width: $width;
+
+  & .album {
+    display: grid;
+    grid-template-areas:
+    "title releaseDate cover artistName";
+    grid-template-columns: 18rem 20rem 32rem 12rem;
+    width: 100%;
+    max-width: 85rem;
+
+    & .line {
+      border: solid 1px #4d4d4d;
+      padding: .5rem 1rem;
+    }
+
+    & .title {
+      grid-area: title;
+      width: 100%;
+    }
+
+    & .releaseDate {
+      grid-area: releaseDate;
+      width: 100%;
+    }
+
+    & .cover {
+      grid-area: cover;
+      width: 100%;
+    }
+
+    & .artistName {
+      grid-area: artistName;
+      width: 100%;
+    }
+  }
+}

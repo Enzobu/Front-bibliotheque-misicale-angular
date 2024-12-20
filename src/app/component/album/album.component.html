@@ -1,0 +1,10 @@
+<div class="albums">
+  <div class="album" *ngFor="let album of albums">
+    <div class="line title">{{album.title}}</div>
+    <div class="line releaseDate">{{album.releaseDate}}</div>
+    <div class="line cover">{{album.cover}}</div>
+    <div class="line artistName">{{album.artist.name}}</div>
+  </div>
+</div>
+<div class="lds-hourglass" [class.inactive]="!isActive"></div>
+
